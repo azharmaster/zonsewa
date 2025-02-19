@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->string('thumnail');
+            $table->string('thumbnail');
             $table->string('address');
             $table->string('is_open');
             $table->softDeletes();
