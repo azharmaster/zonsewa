@@ -26,16 +26,15 @@ class Transaction extends Model
         'delivery_type',
         'started_at',
         'ended_at',
-    ]; 
+    ];
 
 
-    public function generateUniqueTrxId(){
-
+    public function generateUniqueTrxId()
+    {
         $prefix = 'ZS';
-        do{
+        do {
             $randomString = $prefix . mt_rand(1000, 9999);
-
-        }while (self::where('trx_id', $randomString)->exists());
+        } while (self::where('trx_id', $randomString)->exists());
 
         return $randomString;
     }
@@ -46,11 +45,13 @@ class Transaction extends Model
         'ended_at' => 'date'
     ];
 
-    public function store(): BelongsTo{
+    public function store(): BelongsTo
+    {
         return $this->belongsTo(Store::class);
     }
 
-    public function product(): BelongsTo{
+    public function product(): BelongsTo
+    {
         return $this->belongsTo(Product::class);
     }
 }
