@@ -93,7 +93,7 @@
 											stroke-linecap="round"
 											stroke-linejoin="round"
 										/>
-									</svg>`
+									</svg>
 								</div>
 								<p class="font-semibold text-sm leading-[21px] text-[]">Orders</p>
 							</div>
