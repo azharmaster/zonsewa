@@ -29,7 +29,7 @@ class Transaction extends Model
     ];
 
 
-    public function generateUniqueTrxId()
+    public static function generateUniqueTrxId()
     {
         $prefix = 'ZS';
         do {

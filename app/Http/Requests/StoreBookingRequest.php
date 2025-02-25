@@ -20,13 +20,19 @@ class StoreBookingRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        return [
-            //
-            'duration' => ['required', 'integer', 'min:1'],
-            'store_id' => ['required', 'integer'],
-            'started_at' => ['required', 'date', 'after:today'],
-            'address' => ['required', 'string'],
-        ];
-    }
+{
+    return [
+        'duration' => 'required|integer|min:1',
+        'started_at' => ['required', 'date', 'after:today'],
+        'delivery_type' => 'required|in:pickup,home_delivery',
+        'address' => [ 'string'],
+        'store_id' => 'required_if:delivery_type,pickup|exists:stores,id',
+
+        // 'address' => 'required_if:delivery_type,delivery',
+        // 'duration' => ['required', 'integer', 'min:1'],
+        // 'store_id' => ['required', 'integer'],
+        // 'started_at' => ['required', 'date', 'after:today'],
+        // 'address' => ['required', 'string'],
+    ];
+}
 }
