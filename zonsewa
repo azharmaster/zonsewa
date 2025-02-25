@@ -1,0 +1,78 @@
+Berikut adalah panduan terperinci untuk membina aplikasi Laravel 11 yang profesional dengan menggunakan Filament dan MoneyCast. Panduan ini akan merangkumi pemasangan Laravel 11, penyediaan pangkalan data dan model, pemasangan Filament, penciptaan pengguna dan sumber, pengurusan hubungan, dan akhirnya pemasangan MoneyCast.
+
+Langkah 1: Pasang Laravel 11
+Cipta Projek Laravel Baru:
+Buka terminal anda dan jalankan arahan berikut untuk mencipta projek Laravel baru:
+
+bash
+
+composer create-project --prefer-dist laravel/laravel nama-projek-anda "11.*"
+Sediakan Pangkalan Data:
+
+Cipta pangkalan data baru dalam sistem pengurusan pangkalan data pilihan anda (contohnya, MySQL, PostgreSQL).
+Kemas kini fail .env anda dengan kelayakan pangkalan data:
+plaintext
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_pangkalan_data_anda
+DB_USERNAME=nama_pengguna_anda
+DB_PASSWORD=kata_laluan_anda
+Jalankan Migrasi:
+Setelah menyediakan pangkalan data, jalankan migrasi untuk mencipta jadual-jadual lalai:
+
+bash
+
+php artisan migrate
+Langkah 2: Pasang Filament
+Minta Pakej Filament:
+Gunakan Composer untuk memasang Filament:
+
+bash
+
+composer require filament/filament:"^3.2" -W
+Pasang Filament:
+Jalankan arahan berikut untuk memasang Filament dan menyediakan panel yang diperlukan:
+
+bash
+
+php artisan filament:install --panels
+Langkah 3: Cipta Pengguna Filament
+Hasilkan Pengguna Filament:
+Cipta pengguna Filament baru dengan menjalankan:
+
+bash
+
+php artisan make:filament-user
+Ikuti arahan untuk menyediakan kelayakan pengguna.
+
+Langkah 4: Cipta Sumber Filament
+Hasilkan Sumber Pelanggan:
+Cipta sumber Filament baru untuk mengurus pelanggan:
+
+bash
+
+php artisan make:filament-resource Customer
+Arahan ini akan mencipta fail-fail yang diperlukan untuk sumber tersebut, termasuk model, pengawal, dan pandangan.
+
+Langkah 5: Mengurus Hubungan
+Cipta Pengurus Hubungan:
+Untuk mengurus hubungan, anda boleh mencipta pengurus hubungan. Sebagai contoh, untuk mengurus pos yang berkaitan dengan kategori, jalankan:
+
+bash
+
+php artisan make:filament-relation-manager CategoryResource posts title
+Arahan ini akan menyediakan pengurusan hubungan untuk sumber yang ditentukan.
+
+Langkah 6: Pasang MoneyCast
+Pasang MoneyCast:
+Untuk memasang MoneyCast, anda boleh menggunakan Composer. Jalankan arahan berikut:
+
+bash
+
+composer require moneycast/moneycast
+Ikuti sebarang arahan tambahan yang diberikan dalam dokumentasi MoneyCast untuk mengkonfigurasikannya dengan betul dalam aplikasi anda.
+
+Kesimpulan
+Dengan mengikuti langkah-langkah ini, anda akan mempunyai aplikasi Laravel yang profesional yang disediakan dengan Filament untuk pengurusan panel admin dan MoneyCast untuk mengendalikan nilai kewangan. Pastikan untuk menyesuaikan sumber dan hubungan anda mengikut keperluan khusus aplikasi anda.
