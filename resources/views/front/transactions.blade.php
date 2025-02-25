@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{asset('output.css')}}" rel="stylesheet" />
-        <link href="{{asset('main.css')}}" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-	</head>
-	<body>
+@extends('front.layouts.app')
+    @section('title', 'Zon Sewa')
+    @section('content')
 		<main class="max-w-[640px] mx-auto min-h-screen flex flex-col relative has-[#Bottom-nav]:pb-[144px]">
 			<section id="CheckBook" class="w-full flex flex-col gap-10 px-5 items-center pt-20 max-w-[353px] m-auto">
 				<div class="size-[100px] rounded-full overflow-hidden bg-[#FCCF2F] flex items-center justify-center">
@@ -64,7 +57,7 @@
 				<div class="bg-white/50 backdrop-blur-sm absolute w-full h-full"></div>
 				<ul class="flex items-center gap-3 justify-evenly p-5 relative z-10">
 					<li>
-						<a href="index.html">
+						<a href="{{route('front.index')}}">
 							<div class="group flex flex-col items-center text-center gap-2 transition-all duration-300 hover:text-black text-[#9D9DAD]">
 								<div class="w-6 h-6 flex shrink-0">
 									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +77,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="{{route('front.transactions')}}">
 							<div class="group flex flex-col items-center text-center gap-2 transition-all duration-300 hover:text-black">
 								<div class="w-6 h-6 flex shrink-0">
 									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,5 +156,4 @@
 				</ul>
 			</div>
 		</main>
-	</body>
-</html>
+@endsection
